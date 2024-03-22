@@ -25,8 +25,6 @@ class Comment(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="comments_author"
     )
-    name = models.CharField(max_length=80)
-    email = models.EmailField()
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
-    active = models.BooleanField(default=False)
+    approved = models.BooleanField(default=False)
