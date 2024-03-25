@@ -21,6 +21,7 @@ class Post(models.Model):
     excerpt = models.TextField(blank=True)
     class Meta:
         ordering = ["created_on"]
+    # dunder methods always beloow the Meta class
     def __str__(self):
         return f"The title of this post is {self.title}"
 
