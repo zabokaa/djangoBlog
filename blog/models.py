@@ -20,7 +20,7 @@ class Post(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     excerpt = models.TextField(blank=True)
     class Meta:
-        ordering = ["-created_on"]
+        ordering = ["created_on"]
 
 
 class Comment(models.Model):
