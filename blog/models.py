@@ -23,7 +23,7 @@ class Post(models.Model):
         ordering = ["created_on"]
     # dunder methods always beloow the Meta class
     def __str__(self):
-        return f"The title of this post is {self.title} | written by {self.author}"
+        return f"{self.title} | written by {self.author}"
 
 
 
