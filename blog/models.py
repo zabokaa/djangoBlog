@@ -19,7 +19,7 @@ class Post(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
     excerpt = models.TextField(blank=True)
-    field_2 = models.CharField(default="Hola world")
+    field_2 = models.IntegerField(default=1312)
     field_3 = models.CharField(null=True)
     class Meta:
         ordering = ["created_on"]
