@@ -16,7 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-# delete this after creating the blog own urls.py and add "include" to the upper import and update urlpatterns:
+# delete this after creating the blog own urls.py 
+# and add "include" to the upper import and update urlpatterns:
 # from blog.views import hello_blog
 
 urlpatterns = [

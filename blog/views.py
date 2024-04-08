@@ -9,4 +9,6 @@ from .models import Post
 #     """Return a simple Hello World message."""
 #     return HttpResponse("Hello, Blog!")
 class PostList(generic.ListView):
-    model = Post
+    # model = Post
+    queryset = Post.objects.all()
+    template_name = "post_list.html"
