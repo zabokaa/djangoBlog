@@ -10,5 +10,5 @@ from .models import Post
 #     return HttpResponse("Hello, Blog!")
 class PostList(generic.ListView):
     # model = Post
-    queryset = Post.objects.all().order_by("created_on")
+    queryset = Post.objects.filter(status=1)
     # template_name = "post_list.html"
