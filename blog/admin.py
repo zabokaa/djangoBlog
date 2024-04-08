@@ -2,6 +2,7 @@ from django.contrib import admin
 from .models import Post, Comment
 from django_summernote.admin import SummernoteModelAdmin
 
+# Now we have a decorator above the PostAdmin class; delete the existing Post model registration.
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
 
