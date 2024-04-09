@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404
 # from django.http import HttpResponse
 from django.views import generic
 from .models import Post
+from .models import Event
+
 
 # Create your views here.
 
@@ -37,4 +39,25 @@ def post_detail(request, slug):
         request,
         "blog/post_detail.html",
         {"post": post},
+    )
+
+class EventsList(generic.ListView):
+
+    model = Event
+    template_name = "index.html"
+    paginate_by = 12
+
+
+def event_detail(request, event_id):
+
+    event = get_object_or_404(Event, event_id=event_id)
+    queryset = Event.objects.all()
+    post = get_object_or_404(queryset, event_id=event_id)
+
+    return render(
+        request,
+        # template name
+        "events/event_detail.html",
+        # context
+         {"event": event}
     )
