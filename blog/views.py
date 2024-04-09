@@ -37,6 +37,7 @@ def post_detail(request, slug):
 
     return render(
         request,
+        # the 2nd argument is the template name to render:
         "blog/post_detail.html",
         # context dictionary with key(s):
         {"post": post,
