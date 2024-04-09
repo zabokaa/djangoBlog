@@ -40,7 +40,8 @@ def post_detail(request, slug):
         "blog/post_detail.html",
         # context dictionary with key(s):
         {"post": post,
-         "coder": "Saba Kuch",},
+        #  "coder": "Saba Kuch",
+         },
     )
 
 # class EventsList(generic.ListView):
