@@ -38,7 +38,9 @@ def post_detail(request, slug):
     return render(
         request,
         "blog/post_detail.html",
-        {"post": post},
+        # context dictionary with key(s):
+        {"post": post,
+         "coder": "Saba Kuch",},
     )
 
 # class EventsList(generic.ListView):
