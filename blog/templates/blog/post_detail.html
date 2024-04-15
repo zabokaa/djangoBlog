@@ -63,6 +63,7 @@
             </span> wrote:
           </p>
           <div id="comment{{ comment.id }}">
+            <!-- The | linebreaks filter replaces line breaks in the comment text with the appropriate HTML line break. A single newline becomes an HTML line break <br>, and a new line followed by a blank line becomes a paragraph break </p><p>. -->
             {{ comment.body | linebreaks }}
           </div>
           {% if not comment.approved and comment.author == user %}
