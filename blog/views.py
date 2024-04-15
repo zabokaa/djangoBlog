@@ -41,8 +41,12 @@ def post_detail(request, slug):
     comment_count = post.comments.filter(approved=True).count()
 # form functionality for comments
     if request.method == "POST":
+        # assign var name comment_form to IM CommentForm class
+        # As specified in forms.py, this will be stored in the body field.
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
+            #call the comment_form's save method with commit=False
+            #Calling the save method with commit=False returns an object that hasn't yet been saved to the database so that we can modify it further. 
             comment = comment_form.save(commit=False)
             comment.author = request.user
             comment.post = post
@@ -53,6 +57,7 @@ def post_detail(request, slug):
                 'Comment submitted and awaiting approval'
             )
 
+# This line resets the content of the form to blank so that a user can write a second comment if they wish.
     comment_form = CommentForm()
 
     return render(

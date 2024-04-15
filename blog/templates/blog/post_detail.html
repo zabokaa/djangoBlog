@@ -84,7 +84,11 @@
           <p>Posting as: {{ user.username }}</p>
           <form id="commentForm" method="post"
             style="margin-top: 1.3em;">
+            <!-- If you remove the | crispy filter, then the form is rendered as a standard HTML form.  -->
             {{ comment_form | crispy }}
+            <!-- If you remove the {% csrf_token %} tag then Django will return an error when you try to submit the form. -->
+            <!--  using it is another way Django helps to protect us from cross-site attacks-->
+            <!-- and it will render our form using Bootstrap 5 form controls and classes. -->
             {% csrf_token %}
             <button id="submitButton" type="submit"
               class="btn btn-signup btn-lg">Submit</button>
