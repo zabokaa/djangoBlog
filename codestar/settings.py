@@ -51,7 +51,6 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
     "django_summernote",
     "blog",
-    "about",
 ]
 
 # constants for django-allauth
