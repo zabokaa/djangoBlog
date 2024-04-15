@@ -5,7 +5,7 @@ from .models import Post
 from .forms import CommentForm
 from django.contrib import messages
 # from .models import Event
-
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -63,10 +63,19 @@ def post_detail(request, slug):
         {   "post": post,
         #  "coder": "Saba Kuch",
             "comments": comments,
+            # UP info : name comments in the query is not an actual field in the Post model. 
+            # Instead, it is he related_name we supplied in the Comment model.
             "comment_count": comment_count,
             "comment_form": comment_form,
          },
     )
+
+def profile_page(request):
+    """
+        Display profile page for the user.
+    """
+    user = get_object_or_404(User, user=request.user)
+    comments = user.commenter.all()
 
 # class EventsList(generic.ListView):
 
