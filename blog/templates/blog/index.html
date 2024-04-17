@@ -18,6 +18,7 @@
                                 <img class="card-img-top" src="{% static 'images/default.jpg' %}"
                                     alt="placeholder image">
                                 {% else %}
+                                <!-- using .url to retrieve the Cloudinary imgg URL: -->
                                 <img class="card-img-top" src=" {{ post.featured_image.url }}"
                                     alt="{{ post.title }}">
                                 {% endif %}
