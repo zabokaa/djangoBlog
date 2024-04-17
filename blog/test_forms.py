@@ -8,3 +8,7 @@ class TestCommentForm(TestCase):
         comment_form = CommentForm({'body': 'Now the test should pass again'})
         # uses an assert to determine if the form is valid:
         self.assertTrue(comment_form.is_valid(), msg="Form is not valid")
+
+    def test_form_is_invalid(self):
+        comment_form = CommentForm({'body': ''})
+        self.assertFalse(comment_form.is_valid(), msg="Form is valid")
