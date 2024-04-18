@@ -4,8 +4,9 @@ from django.test import TestCase
 from .forms import CommentForm
 from .models import Post
 
+# Test Case is used to define a specific set of tests using a class-based approach.
 class TestBlogViews(TestCase):
-
+    # always FIRST initialise settings in the testing environment before test case:
     def setUp(self):
         # creating superuser and a small blog post
         # self references the current class instance
@@ -37,6 +38,7 @@ class TestBlogViews(TestCase):
         
     def test_successful_comment_submission(self):
         """Test for posting a comment on a post"""
+        # login() method to simulate a user logging into Django's authentication system
         self.client.login(
             username="myUsername", password="myPassword")
         post_data = {
